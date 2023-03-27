@@ -9,10 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5f40ce1-7c0e-4a09-922d-4195853de880" name="Changes" comment="MD5对密码进行转换，并加盐salt使其增加复杂度，增加安全性">
+    <list default="true" id="d5f40ce1-7c0e-4a09-922d-4195853de880" name="Changes" comment="使用MD5对登录进行完善，使用setNull对数据库敏感字段进行屏蔽">
+      <change afterPath="$PROJECT_DIR$/out/artifacts/oa_Web_exploded/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/oa/controller/UserInfoServLet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/oa/entity/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/oa/mapper/RbacMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/oa/service/RbacService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/rbac.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/favicon.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/imooc/oa/controller/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imooc/oa/controller/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/imooc/oa/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imooc/oa/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/oa_Web_exploded/WEB-INF/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/oa_Web_exploded/WEB-INF/classes/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/oa_Web_exploded/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/oa_Web_exploded/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +32,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -67,7 +76,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "last_opened_file_path": "D:/javaPro/oa",
+    "last_opened_file_path": "D:/javaPro/oa/src/main/resources/mappers",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -75,6 +84,7 @@
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
@@ -86,6 +96,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\javaPro\oa\src\main\resources\mappers" />
+      <recent name="D:\javaPro\oa\src\main\webapp" />
       <recent name="$PROJECT_DIR$/src/main/webapp" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -94,6 +106,11 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.imooc.oa.utils" />
       <recent name="com.imooc.oa.service" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.imooc.oa.controller" />
+      <recent name="com.imooc.oa.service" />
+      <recent name="com.imooc.oa.entity" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.87">
@@ -257,7 +274,7 @@
       <workItem from="1679664844435" duration="1118000" />
       <workItem from="1679666149139" duration="13372000" />
       <workItem from="1679879316453" duration="6910000" />
-      <workItem from="1679897969619" duration="4599000" />
+      <workItem from="1679897969619" duration="10691000" />
     </task>
     <task id="LOCAL-00001" summary="初始化oa项目">
       <created>1679661876697</created>
@@ -315,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679901549488</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="使用MD5对登录进行完善，使用setNull对数据库敏感字段进行屏蔽">
+      <created>1679903064939</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1679903064939</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,7 +379,8 @@
     <MESSAGE value="登录接口的初步完成" />
     <MESSAGE value="封装responseUtils工具类简化response的处理" />
     <MESSAGE value="MD5对密码进行转换，并加盐salt使其增加复杂度，增加安全性" />
-    <option name="LAST_COMMIT_MESSAGE" value="MD5对密码进行转换，并加盐salt使其增加复杂度，增加安全性" />
+    <MESSAGE value="使用MD5对登录进行完善，使用setNull对数据库敏感字段进行屏蔽" />
+    <option name="LAST_COMMIT_MESSAGE" value="使用MD5对登录进行完善，使用setNull对数据库敏感字段进行屏蔽" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
