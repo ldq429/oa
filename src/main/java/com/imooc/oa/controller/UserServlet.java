@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.imooc.oa.entity.User;
 import com.imooc.oa.service.UserService;
+import com.imooc.oa.utils.ResponseTuils;
+import com.sun.org.apache.bcel.internal.generic.NEW;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,25 +26,16 @@ public class UserServlet extends HttpServlet {
         resp.setContentType("application/json;charset=utf-8");
         String username = req.getParameter("username");
         String password = req.getParameter("password");
-
-        Map<String,Object> result = new LinkedHashMap<>();
-
+        ResponseTuils response = null;
         try {
             User user = userService.checkLogin(username, password);
-            result.put("code", "0");
-            result.put("message", "success");
-            Map<String,User> data = new LinkedHashMap<>();
-            data.put("user", user);
-            result.put("data", data);
+            response = new ResponseTuils().put("user", user);
         } catch (Exception e) {
-            result.put("code", e.getClass().getSimpleName());
-            result.put("message", e.getMessage());
+            e.printStackTrace();
+            response = new ResponseTuils(e.getClass().getSimpleName(), e.getMessage());
         }
         // 返回json結果
-        ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-        String json = objectMapper.writeValueAsString(result);
-        resp.getWriter().println(json);
+        resp.getWriter().println(response.toStringJson());
     }
 
     @Override

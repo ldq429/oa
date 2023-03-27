@@ -20,8 +20,7 @@
             -moz-border-radius: 5px;
             box-shadow: 0 0 25px #909399;
         }
-
-        .login-title {
+        .login-title{
             text-align: center;
             margin: 0 auto 40px auto;
             color: #303133;
@@ -48,23 +47,24 @@
         data() {
             return {
                 form: {
-                    username: '', password: ''
+                    username: ''
+                    ,password: ''
                 }
-                , rules: {
+                ,rules:{
                     username: [
-                        {required: true, message: '账号不能为空', trigger: 'blur'}
+                        {required: true,message : '账号不能为空' , trigger:'blur'}
                     ],
-                    password: [
-                        {required: true, message: '密码不能为空', trigger: 'blur'}
+                    password:[
+                        {required: true,message : '密码不能为空' , trigger:'blur'}
                     ]
                 }
             }
         }
-        , methods: {
-            onSubmit(formName) {
+        ,methods : {
+            onSubmit(formName){
                 const form = this.$refs[formName];
                 form.validate((valid) => {
-                    if (valid) {
+                    if(valid){
                         console.info("表单校验成功,准备提交数据");
                         const form = this.form;
                         const $message = this.$message;
@@ -74,12 +74,12 @@
                         axios.post("/api/login", params, {}).then(function (response) {
                             console.info(response);
                             const json = response.data;
-                            if (json.code == "0") {
-                                sessionStorage.uid = json.data.user.userId;
-                                sessionStorage.eid = json.data.user.employeeId;
+                            if(json.code=="0"){
+                                sessionStorage.uid=json.data.user.userId;
+                                sessionStorage.eid=json.data.user.employeeId;
                                 window.location.href = "/index.html";
-                            } else {
-                                $message.error({message: json.message, offset: 100});
+                            }else{
+                                $message.error({message:json.message});
                             }
                         });
                     }
