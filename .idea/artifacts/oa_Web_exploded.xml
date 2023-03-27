@@ -6,6 +6,18 @@
         <element id="directory" name="classes">
           <element id="module-output" name="oa" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.4.6" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.4.6" />
+          <element id="library" level="project" name="Maven: com.alibaba:druid:1.2.16" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.12.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.12.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.12.3" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.21.9" />
+          <element id="library" level="project" name="Maven: com.mysql:mysql-connector-j:8.0.32" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.5.13" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:2.0.4" />
+        </element>
       </element>
       <element id="javaee-facet-resources" facet="oa/web/Web" />
     </root>
