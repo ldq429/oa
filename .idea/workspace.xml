@@ -9,15 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5f40ce1-7c0e-4a09-922d-4195853de880" name="Changes" comment="封装responseUtils工具类简化response的处理">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_15.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imooc/oa/utils/Md5Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/imooc/oa/utils/Md5UtilsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/oa_Web_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/oa_Web_exploded.xml" afterDir="false" />
+    <list default="true" id="d5f40ce1-7c0e-4a09-922d-4195853de880" name="Changes" comment="MD5对密码进行转换，并加盐salt使其增加复杂度，增加安全性">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oa.iml" beforeDir="false" afterPath="$PROJECT_DIR$/oa.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/imooc/oa/controller/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imooc/oa/controller/UserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/imooc/oa/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imooc/oa/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +96,7 @@
       <recent name="com.imooc.oa.service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Md5UtilsTest.md5Digest">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.87">
     <configuration name="Md5UtilsTest.md5Digest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="oa" />
       <extension name="coverage">
@@ -262,7 +257,7 @@
       <workItem from="1679664844435" duration="1118000" />
       <workItem from="1679666149139" duration="13372000" />
       <workItem from="1679879316453" duration="6910000" />
-      <workItem from="1679897969619" duration="3254000" />
+      <workItem from="1679897969619" duration="4599000" />
     </task>
     <task id="LOCAL-00001" summary="初始化oa项目">
       <created>1679661876697</created>
@@ -313,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679900366727</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="MD5对密码进行转换，并加盐salt使其增加复杂度，增加安全性">
+      <created>1679901549488</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1679901549488</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,6 +345,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="初始化oa项目" />
     <MESSAGE value="update .igonre" />
@@ -350,7 +354,8 @@
     <MESSAGE value="增加user实体类，添加部分前端支持，编写mapper，service，" />
     <MESSAGE value="登录接口的初步完成" />
     <MESSAGE value="封装responseUtils工具类简化response的处理" />
-    <option name="LAST_COMMIT_MESSAGE" value="封装responseUtils工具类简化response的处理" />
+    <MESSAGE value="MD5对密码进行转换，并加盐salt使其增加复杂度，增加安全性" />
+    <option name="LAST_COMMIT_MESSAGE" value="MD5对密码进行转换，并加盐salt使其增加复杂度，增加安全性" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

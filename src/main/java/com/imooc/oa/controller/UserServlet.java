@@ -29,6 +29,9 @@ public class UserServlet extends HttpServlet {
         ResponseTuils response = null;
         try {
             User user = userService.checkLogin(username, password);
+            // 不应该给用户返回 密码、盐值故做一下屏蔽
+            user.setPassword(null);
+            user.setSalt(null);
             response = new ResponseTuils().put("user", user);
         } catch (Exception e) {
             e.printStackTrace();
