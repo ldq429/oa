@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="rbacMapper">
+    <select id="selectNodeByUserId" parameterType="Long" resultType="com.imooc.oa.entity.Node">
+        SELECT DISTINCT n.*
+        FROM sys_role_user AS ru,
+             sys_role_node AS rn,
+             sys_node AS n
+        WHERE rn.node_id = n.node_id
+          AND rn.role_id = ru.role_id
+          AND ru.user_id = #{value}
+        ORDER BY n.node_code
+    </select>
+</mapper>

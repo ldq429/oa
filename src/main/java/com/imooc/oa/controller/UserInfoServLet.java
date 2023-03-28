@@ -1,6 +1,8 @@
 package com.imooc.oa.controller;
 
+import com.imooc.oa.entity.Employee;
 import com.imooc.oa.entity.Node;
+import com.imooc.oa.service.EmployeeService;
 import com.imooc.oa.service.RbacService;
 import com.imooc.oa.utils.ResponseTuils;
 
@@ -19,10 +21,13 @@ import java.util.Map;
 public class UserInfoServLet extends HttpServlet {
     private RbacService rbacService = new RbacService();
 
+    private EmployeeService employeeService = new EmployeeService();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String uid = req.getParameter("uid");
-        List<Node> nodes = rbacService.selectNodeByUserId(Long.parseLong(uid));
+        String eid = req.getParameter("eid");
+         List<Node> nodes = rbacService.selectNodeByUserId(Long.parseLong(uid));
         List<Map> treeList = new ArrayList<>();
         // 定义数据结构的map
         Map module = null;
@@ -37,7 +42,9 @@ public class UserInfoServLet extends HttpServlet {
                 children.add(node);
             }
         }
-        String json = new ResponseTuils().put("nodeList", treeList).toStringJson();
+        Employee employee = employeeService.selectById(Long.parseLong(eid));
+        String json = new ResponseTuils().put("nodeList", treeList).put("employee",employee).toStringJson();
+
         resp.setContentType("application/json;charset=utf-8");
         resp.getWriter().println(json);
     }
